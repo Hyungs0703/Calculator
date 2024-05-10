@@ -9,16 +9,35 @@ public class Main {
          Scanner sc = new Scanner(System.in);
          //연산의 결과를 저장할 수 잇는 배열생성
          // int [] resultList = new int[10];
-        List<Integer> resultList = new ArrayList<>();
+//        List<Integer> resultList = new ArrayList<>();
+//        List<Double> circleList = new ArrayList<>();
         //생성
         int index = 0;
         int result = 0;
         String input="";
         boolean flag=true;
+        double circleResult= 0;
+
         //Caulculator 인스턴스
         Calculator calculator = new Calculator();
-        //반복문을 사용하여 연산을 반복
-        while(flag){
+        Calculator calculateCircleArea = new Calculator();
+        //반복문 시작
+        // 사칙연산을 진행 or 원의 넓이
+        System.out.println("원의 넓이를 구하고싶다면 1을 눌러주세요 .");
+        System.out.println("사칙연산을 하고싶으면 2를 눌러주세요 .");
+        input = sc.nextLine();
+        //원의넓이
+        if(input.equals("1")){
+            System.out.println("반지름을 입력해주세요.");
+            calculator.number1 = sc.nextInt();
+                circleResult = calculator.number1*calculator.number1*calculator.CIRCLE;
+                System.out.println("결과 :" + circleResult);
+                //결과값 저장
+                calculator.setCircleResultList(circleResult);
+                //저장값 전체조회
+                calculator.inquiryCircleResults();
+        //사칙연산
+        }else if(input.equals("2")){
         System.out.println("첫번째 숫자를 입력해주세요.");
         calculator.number1 = sc.nextInt();
         System.out.println("사칙연산 기호를 입력해주세요.");
@@ -46,9 +65,6 @@ public class Main {
                     result = calculator.number1 / calculator.number2;
                 }
             }
-
-
-
             System.out.println("결과 :" +result);
             //연산의 결과를 배열에 저장합니다.
 //            for(int i = 0; i <resultList.length-1; i++){
