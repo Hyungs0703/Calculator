@@ -56,7 +56,7 @@ public class Main {
 //            }
             //마지막 10번쨰 배열에 저장
 //            resultList[9]= result;
-            //배열에서 컬렉션으로 변경됨으로써 변경해야하는 부분 구현
+            //저장하기
             calculator.setResultList(result);
             //인덱스는 증가합니다.
             index++;
@@ -65,21 +65,20 @@ public class Main {
             input = sc.nextLine();
             //remove 입력받으면 결과삭제
             if(input.equals("remove")){
-                calculator.getResultList().remove(index);
+                calculator.getResultList().removeFirst();
             }
             System.out.println("저장된 연산 결과를 조회하시겠습니까? (inquiry 입력시 조회)");
             input = sc.nextLine();
-            if(input.equals("inquiry")){
+            if(input.equals("inquiry")) {
                 //저장된 연산 결과 출력
-                for(int num : calculator.getResultList()){
-                    System.out.println("연산결과 : "+num );
-                }
+                System.out.println("연산결과 : " + calculator.getResultList()+"\n");
             }
             System.out.println("저장된 연산 결과를 모두 삭제하시겠습니까?(clear 입력시 삭제)");
             input = sc.nextLine();
             //삭제 기능 구현
             if(input.equals("clear")){
                 calculator.removeResult();
+                System.out.println("연산 결과 조회:" + calculator.getResultList());
             }
             System.out.println("더 계산하시겠습니까?(exit 입력시 종료)");
             input = sc.nextLine();
