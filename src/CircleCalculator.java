@@ -16,8 +16,8 @@ public class CircleCalculator extends Calculator {
         return circleList;
     }
     //setter
-    public List<Double> setCircleResultList(double results){
-        circleList.add(results);
+    public List<Double> setCircleResultList(double circleresults){
+        circleList.add(circleresults);
         return circleList;
     }
     //저장된 연산 결과 조회 기능

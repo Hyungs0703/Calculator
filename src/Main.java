@@ -20,7 +20,8 @@ public class Main {
 
         //Caulculator 인스턴스
         Calculator calculator = new Calculator();
-        Calculator calculateCircleArea = new Calculator();
+        ArithmericCalculator arithmericCalculator = new ArithmericCalculator();
+        CircleCalculator circleCalculator = new CircleCalculator();
         //반복문 시작
         // 사칙연산을 진행 or 원의 넓이
         System.out.println("원의 넓이를 구하고싶다면 1을 눌러주세요 .");
@@ -33,9 +34,9 @@ public class Main {
                 circleResult = calculator.number1*calculator.number1*calculator.CIRCLE;
                 System.out.println("결과 :" + circleResult);
                 //결과값 저장
-                calculator.setCircleResultList(circleResult);
+                circleCalculator.setCircleResultList(circleResult);
                 //저장값 전체조회
-                calculator.inquiryCircleResults();
+                circleCalculator.inquiryCircleResults();
         //사칙연산
         }else if(input.equals("2")){
         System.out.println("첫번째 숫자를 입력해주세요.");
@@ -73,7 +74,7 @@ public class Main {
             //마지막 10번쨰 배열에 저장
 //            resultList[9]= result;
             //저장하기
-            calculator.setResultList(result);
+            arithmericCalculator.setResultList(result);
             //인덱스는 증가합니다.
             index++;
 
@@ -81,20 +82,20 @@ public class Main {
             input = sc.nextLine();
             //remove 입력받으면 결과삭제
             if(input.equals("remove")){
-                calculator.getResultList().removeFirst();
+                arithmericCalculator.getResultList().removeFirst();
             }
             System.out.println("저장된 연산 결과를 조회하시겠습니까? (inquiry 입력시 조회)");
             input = sc.nextLine();
             if(input.equals("inquiry")) {
                 //저장된 연산 결과 출력
-                calculator.inquiryResults();
+                arithmericCalculator.inquiryResults();
             }
             System.out.println("저장된 연산 결과를 모두 삭제하시겠습니까?(clear 입력시 삭제)");
             input = sc.nextLine();
             //삭제 기능 구현
             if(input.equals("clear")){
-                calculator.removeResult();
-                System.out.println("연산 결과 조회:" + calculator.getResultList());
+                arithmericCalculator.removeResult();
+                System.out.println("연산 결과 조회:" + arithmericCalculator.getResultList());
             }
             System.out.println("더 계산하시겠습니까?(exit 입력시 종료)");
             input = sc.nextLine();
