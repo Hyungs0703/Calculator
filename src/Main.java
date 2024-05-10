@@ -71,7 +71,7 @@ public class Main {
             input = sc.nextLine();
             if(input.equals("inquiry")) {
                 //저장된 연산 결과 출력
-                System.out.println("연산결과 : " + calculator.getResultList()+"\n");
+                calculator.inquiryResults();
             }
             System.out.println("저장된 연산 결과를 모두 삭제하시겠습니까?(clear 입력시 삭제)");
             input = sc.nextLine();
