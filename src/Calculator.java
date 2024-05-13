@@ -37,5 +37,9 @@ public class Calculator {
         this.results = results;
         return results;
     }
+    //results 리스트의 0번째 인덱스 삭제 기능 구현
+    public void removeResult(){
+        results.remove(0);
+    }
 }
 
