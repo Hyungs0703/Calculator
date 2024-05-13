@@ -42,18 +42,23 @@ public class Main {
                     }
                 default :
                     System.out.println("사칙연산기호가 잘못 입력되었습니다.");
-                    break;
+                    return;
             }
             System.out.println("결과 : " + result);
             results.add(result);
 
             //가장 먼저 저장된 결과 삭제
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove)입력");
-            if(sc.next().equals("remove")){
+            if(Objects.equals(sc.next(),"remove")){
                 results.remove(0);
-                System.out.println(results.toString());
             }
-
+            //저장된 연산결과 조회
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            if(Objects.equals(sc.next(), "inquiry")){
+                for(Integer i : results){
+                    System.out.println("연산결과 : "+i );
+                }
+            }
             System.out.println("더 계산하겠습니까 ? (exit 입력시 종료)");
         }while(!sc.next().equals("exit"));
     }
