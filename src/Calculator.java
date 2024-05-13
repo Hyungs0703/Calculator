@@ -29,7 +29,7 @@ public class Calculator {
                  }
                  return result;
          }
-
+    //getter
     public List<Integer> getResults() {
         return results;
     }
@@ -38,8 +38,14 @@ public class Calculator {
         return results;
     }
     //results 리스트의 0번째 인덱스 삭제 기능 구현
-    public void removeResult(){
-        results.remove(0);
+    public void removeResult(int index){
+        results.remove(index);
+    }
+    //저장된 연산결과 조회 기능
+    public void inquiryResults(){
+        for (Integer result : results) {
+            System.out.println("연산결과 : "+ result);
+        }
     }
 }
 
