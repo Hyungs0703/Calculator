@@ -12,5 +12,9 @@ public class Main {
         int number2 = sc.nextInt();
 
 
+        //사칙연산 기호 전달
+        System.out.print("사칙 연산 기호를 입력해주세요 : ");
+        char operator = sc.next().charAt(0);
+
     }
 }
