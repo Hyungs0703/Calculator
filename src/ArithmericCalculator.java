@@ -9,7 +9,6 @@ public class ArithmericCalculator extends Calculator{
         this.operation = operation;
         this.number1 = number1;
         this.number2 = number2;
-        List<Integer> resultList = new ArrayList<>();
     }
     //getter
     public List<Integer> getResultList() {
@@ -29,4 +28,3 @@ public class ArithmericCalculator extends Calculator{
         resultList.clear();
     }
 }
-

@@ -9,8 +9,8 @@ public class Main {
          Scanner sc = new Scanner(System.in);
          //연산의 결과를 저장할 수 잇는 배열생성
          // int [] resultList = new int[10];
-//        List<Integer> resultList = new ArrayList<>();
-//        List<Double> circleList = new ArrayList<>();
+//       List<Integer> resultList = new ArrayList<>();
+//       List<Double> circleList = new ArrayList<>();
         //생성
         int index = 0;
         int result = 0;
@@ -22,6 +22,11 @@ public class Main {
         Calculator calculator = new Calculator();
         ArithmericCalculator arithmericCalculator = new ArithmericCalculator();
         CircleCalculator circleCalculator = new CircleCalculator();
+
+        AddOperator addOperator = new AddOperator();
+        SubtractOperator subtractOperator = new SubtractOperator();
+        MultiplyOperator multiplyOperator = new MultiplyOperator();
+        DivideOperator divideOperator = new DivideOperator();
         //반복문 시작
         // 사칙연산을 진행 or 원의 넓이
         System.out.println("원의 넓이를 구하고싶다면 1을 눌러주세요 .");
@@ -49,21 +54,22 @@ public class Main {
             try{
                 error();
             }catch (Exception e){
+                System.out.println("잘못 입력하였습니다. 다시 입력해주세요");
               return;
             }
         }
-            if(calculator.operation == '+'){
-                result = calculator.number1+calculator.number2;
-            }else if(calculator.operation == '-'){
-                result = calculator.number1-calculator.number2;
-            }else if(calculator.operation == '*'){
-                result = calculator.number1*calculator.number2;
-            }else if(calculator.operation == '/') {
-                if (calculator.number2 == 0) {
+        if(calculator.operation == '+'){
+                result = addOperator.operate(calculator.number1, calculator.number2);
+        }else if(calculator.operation == '-'){
+                result = subtractOperator.operate(calculator.number1, calculator.number2);
+        }else if(calculator.operation == '*'){
+                result = multiplyOperator.operate(calculator.number1, calculator.number2);
+        }else if(calculator.operation == '/') {
+            if (calculator.number2 == 0) {
                     System.out.println("나눗셈에 0은 들어갈 수 없습니다.");
                     return;
-                } else {
-                    result = calculator.number1 / calculator.number2;
+            } else {
+                result = divideOperator.operate(calculator.number1, calculator.number2);
                 }
             }
             System.out.println("결과 :" +result);
