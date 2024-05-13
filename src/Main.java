@@ -7,43 +7,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)  {
 
-        ArrayList<Integer> results = new ArrayList<>();
+        Calculator calculator = new Calculator();
         //스캐너 생성
         Scanner sc = new Scanner(System.in);
         do{
             System.out.print("첫 번째 숫자를 입력하세요 : ");
-            int number1 = sc.nextInt();
+            int num1 = sc.nextInt();
             System.out.print("두 번째 숫자를 입력하세요 : ");
-            int number2 = sc.nextInt();
+            int num2 = sc.nextInt();
             System.out.print("사칙 연산 기호를 입력해주세요 : ");
-            int result = 0;
+
 
             //배열 생성, 선언 및 배열안의 선언할 인덱스 증가 생성
-
-
             char operator = sc.next().charAt(0);
-            switch(operator){
-                case '+' :
-                    result = number1 + number2;
-                    break;
-                case '-' :
-                    result = number1 - number2;
-                    break;
-                case '*' :
-                    result = number1 * number2;
-                    break;
-                case '/':
-                    if(number2 != 0){
-                        result= number1 / number2;
-                        return;
-                    }else{
-                        System.out.println("두번째 숫자는 0이 입력될 수 없습니다.");
-                        return;
-                    }
-                default :
-                    System.out.println("사칙연산기호가 잘못 입력되었습니다.");
-                    return;
-            }
+
             System.out.println("결과 : " + result);
             results.add(result);
 
