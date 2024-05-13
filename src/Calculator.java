@@ -7,6 +7,7 @@ public class Calculator {
 
         public int calculate(int num1, int num2, char opearator){
             int result = 0;
+
             switch(opearator){
                     case '+' :
                         result = num1 + num2;
