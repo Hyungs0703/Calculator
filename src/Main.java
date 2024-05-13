@@ -37,7 +37,7 @@ public class Main {
             System.out.println("반지름을 입력해주세요.");
             calculator.number1 = sc.nextInt();
                 circleResult = calculator.number1*calculator.number1*calculator.CIRCLE;
-                System.out.println("결과 :" + circleResult);
+                System.out.println("원의 넓이 :" + circleResult);
                 //결과값 저장
                 circleCalculator.setCircleResultList(circleResult);
                 //저장값 전체조회
