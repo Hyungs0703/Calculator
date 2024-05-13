@@ -44,8 +44,16 @@ public class Main {
                     break;
             }
             System.out.println("결과 : " + result);
+            if(index==10){
+                //배열의 크기가 10이다. 또한 10이상은 저장될 수 없기에 앞으로 한칸씩 당기면서 저장되게한다.
+                for (int i = 0; i < results.length -1 ; i++) {
+                    results[i] =results[i+1];
+                }
+                index--;
+            }
             results[index] = result;
             index++;
+
 
             System.out.println("저장 :" + Arrays.toString(results));
             System.out.println("인덱스 : "+index);
