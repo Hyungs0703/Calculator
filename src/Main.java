@@ -1,13 +1,11 @@
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args)  {
 
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ArrayList<>());
+
         //스캐너 생성
         Scanner sc = new Scanner(System.in);
         do{

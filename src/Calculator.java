@@ -3,8 +3,14 @@ import java.util.List;
 
 public class Calculator {
 
-    private List<Integer> results = new ArrayList<>();
 
+    private List<Integer> results;
+
+    //생성자 초기화
+    public Calculator (List<Integer> results){
+        this.results = new ArrayList<>();
+    }
+    
     public int calculate(int num1, int num2, char opearator){
         int result = 0;
 
